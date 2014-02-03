@@ -1,0 +1,15 @@
+<h1>Clip.js - Because somebody had to fix it.</h1>
+<p>You're reading a lengthy article on a mobile device. The text size is too small, or there's a video, or whatever, and you want to change from portrait to landscape or vice versa. The content reflows, and you lose your place.</p>
+
+<h3>How it works</h3>
+<p>Clip.js lets you specify an element (any jQuery selector will work), and keeps track of the topmost visible child of that element. After the <code>orientationchange</code> event has fired, it scrolls you up/down to the top of that element.</p>
+
+<p>It requires jQuery, and has been verified to work at least as far back as 1.10.2 (the version wootheme's canvas uses). I've tested it on an iPod touch running iOS 7.</p>
+
+<p>The total file size minified and concatinated is less than 0.5KB, so you could definitely inline it.</p>
+
+<h3>Usage</h3>
+<p>Include the file in your document's head, or just inline it, and declare <code>var clipjsElement = ".theparentelement"</code>. If you don't declare it, the default is the root document.</p>
+
+<h3>License</h3>
+<p><a href="http://opensource.org/licenses/MIT">MIT</a></p>
