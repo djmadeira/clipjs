@@ -1,0 +1,109 @@
+$bg-color: #fff;
+$buzztext-size: 6em;
+
+*,*:before,*:after { box-sizing:border-box;}
+body {
+  font: 17px/1.2 Helvetica, sans-serif;
+  background:#eee;
+  min-height:100%;
+  margin: 0;
+  padding: 0;
+  perspective: 1000;
+  text-rendering: optimizeLegibility;
+}
+.wrapper {
+  max-width:640px;
+  margin:1em auto;
+  padding:0 .25em 0 2.5em;
+  position: relative;
+}
+.wrapper-inner {
+	width:100%;
+	padding: 0 .5em .5em .5em;
+	background:$bg-color;
+}
+.content {
+  clear:both;
+}
+h1 {
+  margin:0 0 .5em -0.5em;
+  padding:0;
+  font-size:5em;
+  position:relative;
+  clear:both;
+  span {
+    position:relative;
+    z-index:2;
+    display:block;
+    float:left;
+    &:first-of-type {
+      z-index:0;
+      transform-origin: 100% 100%;
+      transform:rotateZ(-8deg) translate(5px, -5px);
+      animation: clip 1s ease 1;
+      animation-direction:reverse;
+    }
+  }
+  &:after {
+    content:'';
+    position:absolute;
+    top:0;
+    left:.4em;
+    background:$bg-color;
+    width:50px;
+    height:50px;
+    z-index:1;
+  }
+  &:hover > span:first-of-type {
+     animation: clip 1s ease 1;
+     z-index:2;
+  }
+}
+.subheading {
+  margin-top:-.9em;
+}
+.buzztext {
+position:absolute;
+top:-2em;
+right:-2em;
+width: $buzztext-size;
+height: $buzztext-size;
+border-radius: $buzztext-size / 2;
+	h2 {
+		display: block;
+		position:relative;
+		top:0;
+		right:0;
+		width: $buzztext-size;
+		height: $buzztext-size;
+		margin: 0;
+		padding:$buzztext-size / 5 0;
+		text-align: center;
+		background: #3194FF;
+		color: #fff;
+		border-radius: $buzztext-size / 2;
+		font-size: .9em;
+		transform: rotateZ(8deg) rotateY(0deg);
+		transition: .4s ease;
+	}
+	&:hover > h2 {
+		transform: rotateZ(8deg) rotateY(360deg);
+	}
+}
+
+/* Below iPad Portrait */
+@media only screen and (max-width : 767px) {
+	.wrapper {
+		margin-top: 2em;
+	}
+	.buzztext {
+		right:-.5em;
+	}
+}
+
+@keyframes clip {
+  0% {z-index:0; transform:rotateZ(-8deg)  translate(5px, -5px);}
+  50% {transform:rotateZ(-25deg)  translate(5px, -5px);}
+  100% {z-index:2; transform:rotateZ(-8deg)  translate(5px, -5px);}
+}
+
