@@ -1,3 +1,5 @@
+**Please don't use this. I haven't updated it in a long time, and I doubt if I ever will. This is a good idea, poorly implemented. You should consider doing this yourself, but much better than I did here.**
+
 Clip.js - Because somebody had to fix it.
 -----------------------------------------
 You're reading a lengthy article on a mobile device. The text size is too small, or there's a video, or whatever, and you want to change from portrait to landscape or vice versa. The content reflows, and you lose your place.
